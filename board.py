@@ -1,19 +1,12 @@
 import pygame
 import os
+from default_board import default_board
+
 
 class Board:
     def __init__(self, scailing_factor):
         # King: K, queen: Q, rook: R, bishop: B, knight: N, pawn: P
-        self.board = [
-            [("R","b"), ("N","b"), ("B","b"), ("Q","b"), ("K","b"), ("B","b"), ("N","b"), ("R","b")],
-            [("P","b"), ("P","b"), ("P","b"), ("P","b"), ("P","b"), ("P","b"), ("P","b"), ("P","b")],
-            [("",""), ("",""), ("",""), ("",""), ("",""), ("",""), ("",""), ("","")],
-            [("",""), ("",""), ("",""), ("",""), ("",""), ("",""), ("",""), ("","")],
-            [("",""), ("",""), ("",""), ("",""), ("",""), ("",""), ("",""), ("","")],
-            [("",""), ("",""), ("",""), ("",""), ("",""), ("",""), ("",""), ("","")],
-            [("P","w"), ("P","w"), ("P","w"), ("P","w"), ("P","w"), ("P","w"), ("P","w"), ("P","w")],
-            [("R","w"), ("N","w"), ("B","w"), ("Q","w"), ("K","w"), ("B","w"), ("N","w"), ("R","w")]
-        ]
+        self.board = default_board
         self.scailing_factor = scailing_factor
         self.turn = "w"
 
