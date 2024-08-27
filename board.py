@@ -17,7 +17,7 @@ class Board:
         if self.turn == self.board[y2][x2][1]:
             print("Can't kill your own piece")
             return
-        # TODO: handle en passant and dissallow jumps
+        # TODO: handle en passant
         if self.board[y1][x1][0] == "P":
             if self.turn == "w":
                 other = "b"
@@ -33,7 +33,11 @@ class Board:
                     return
             else:
                 if y1 + 1 * sign != y2:
-                    if y1 + 2 * sign != y2 or y1 != n:
+                    if (
+                        y1 + 2 * sign != y2
+                        or y1 != n
+                        or self.board[y1 + sign][x1][1] != ""
+                    ):
                         print("Invalid move")
                         return
         if self.board[y1][x1][0] == "N":
